@@ -1,0 +1,20 @@
+application: detect-my-ip
+version: dev
+runtime: python
+api_version: 1
+
+handlers:
+    
+- url: /style
+  static_dir: style
+
+- url: /images
+  static_dir: images
+
+- url: /visitors
+  script: main.py
+  login: admin
+
+- url: /
+  script: main.py
+  login: required
